@@ -3,97 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Camila - Boceto Visual</title>
+    <title>Portfolio de Camila - Boceto Mejorado</title>
     
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts for professional typography -->
+    <!-- Google Fonts: Cormorant Garamond para elegancia y Manrope para legibilidad moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* Define custom fonts to be used with Tailwind */
-        body {
-            font-family: 'Inter', sans-serif;
+        /* Paleta de colores y tipografías personalizadas */
+        :root {
+            --bg-color: #f7f7f7; /* Un blanco roto, más suave y premium */
+            --text-color: #1a1a1a; /* Un negro no tan puro, más fácil a la vista */
+            --accent-color: #a3a3a3; /* Un gris sutil para acentos */
         }
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-weight: 300; /* Usamos una fuente más fina por defecto */
+        }
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        /* Transición más suave para el hover */
+        .gallery-item img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .gallery-item .overlay {
+            transition: opacity 0.5s ease-in-out;
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="antialiased">
 
-    <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6 md:px-10">
-            <div class="font-playfair text-2xl font-bold tracking-wider">
+    <!-- 
+        HEADER MEJORADO
+        - Más espaciado (py-6) para una sensación más "aireada".
+        - La sombra es aún más sutil.
+        - Se usan las nuevas fuentes.
+    -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
+        <div class="container mx-auto flex justify-between items-center py-6 px-6 md:px-12">
+            <div class="font-cormorant text-2xl md:text-3xl font-semibold tracking-wider">
                 CAMILA TESSIO
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-widest uppercase">
-                <a href="#" class="text-gray-900 border-b-2 border-gray-900 pb-1">TRABAJOS</a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 transition-colors duration-300">SOBRE MÍ</a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 transition-colors duration-300">CONTACTO</a>
+            <nav class="hidden md:flex space-x-10 text-xs font-medium tracking-[0.2em] uppercase">
+                <a href="#trabajos" class="text-black border-b-2 border-black pb-1">TRABAJOS</a>
+                <a href="#sobre-mi" class="text-gray-500 hover:text-black transition-colors duration-300">SOBRE MÍ</a>
+                <a href="#contacto" class="text-gray-500 hover:text-black transition-colors duration-300">CONTACTO</a>
             </nav>
             <div class="md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </div>
         </div>
     </header>
 
-    <!-- GALERÍA PRINCIPAL -->
-    <main class="container mx-auto p-6 md:p-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                <img src="https://placehold.co/600x800/e2e8f0/334155?text=CAMPAÑA+1" alt="Foto de una campaña de moda" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-white font-playfair text-2xl">Campaña Verano '25</h3>
+    <main class="container mx-auto px-6 md:px-12">
+        <!-- 
+            GALERÍA MEJORADA
+            - Más espacio entre fotos (gap-6)
+            - El efecto de hover es más elegante y sutil.
+        -->
+        <section id="trabajos" class="py-16 md:py-24">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Imagen 1 -->
+                <a href="#" class="gallery-item group relative overflow-hidden block">
+                    <img src="https://placehold.co/600x800/d1d5db/1f2937?text=CAMPAÑA+1" alt="Foto de una campaña de moda" class="w-full h-full object-cover group-hover:scale-105">
+                    <div class="overlay absolute inset-0 bg-black/40 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                        <h3 class="text-white font-cormorant text-3xl">Campaña Verano '25</h3>
+                    </div>
+                </a>
+                <!-- Imagen 2 -->
+                <a href="#" class="gallery-item group relative overflow-hidden block">
+                    <img src="https://placehold.co/800x600/d1d5db/1f2937?text=EDITORIAL" alt="Foto de una editorial de moda" class="w-full h-full object-cover group-hover:scale-105">
+                    <div class="overlay absolute inset-0 bg-black/40 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                        <h3 class="text-white font-cormorant text-3xl">Editorial Vogue</h3>
+                    </div>
+                </a>
+                <!-- Imagen 3 -->
+                <a href="#" class="gallery-item group relative overflow-hidden block">
+                    <img src="https://placehold.co/600x800/d1d5db/1f2937?text=RETRATO" alt="Retrato de la modelo" class="w-full h-full object-cover group-hover:scale-105">
+                    <div class="overlay absolute inset-0 bg-black/40 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                        <h3 class="text-white font-cormorant text-3xl">Retratos Beauty</h3>
+                    </div>
+                </a>
+                <!-- Imagen 4 (ocupa 2 columnas) -->
+                <a href="#" class="gallery-item group relative overflow-hidden block sm:col-span-2">
+                    <img src="https://placehold.co/1200x600/d1d5db/1f2937?text=LOOKBOOK" alt="Foto de una campaña de moda en exteriores" class="w-full h-full object-cover group-hover:scale-105">
+                    <div class="overlay absolute inset-0 bg-black/40 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                        <h3 class="text-white font-cormorant text-3xl">Lookbook Invierno</h3>
+                    </div>
+                </a>
+                <!-- Imagen 5 y 6 -->
+                <a href="#" class="gallery-item group relative overflow-hidden block">
+                     <img src="https://placehold.co/600x600/d1d5db/1f2937?text=DETALLE" alt="Foto detalle de un accesorio" class="w-full h-full object-cover group-hover:scale-105">
+                    <div class="overlay absolute inset-0 bg-black/40 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                        <h3 class="text-white font-cormorant text-3xl">Accesorios</h3>
+                    </div>
+                </a>
+                <a href="#" class="gallery-item group relative overflow-hidden block">
+                     <img src="https://placehold.co/600x800/d1d5db/1f2937?text=URBANA" alt="Foto de una campaña de moda urbana" class="w-full h-full object-cover group-hover:scale-105">
+                    <div class="overlay absolute inset-0 bg-black/40 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                        <h3 class="text-white font-cormorant text-3xl">Moda Urbana</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 
+            NUEVA SECCIÓN: SOBRE MÍ
+            - Añadimos un placeholder visual para que ella entienda dónde iría su información.
+            - Dividido en dos columnas para texto y datos.
+        -->
+        <section id="sobre-mi" class="py-16 md:py-24 border-t border-gray-200">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <h2 class="font-cormorant text-4xl md:text-5xl font-semibold mb-4">Sobre Mí</h2>
+                </div>
+                <div class="md:col-span-2 text-gray-600 space-y-6 text-base md:text-lg font-light leading-relaxed">
+                    <p>Aquí iría una breve biografía o texto de presentación. Un párrafo que hable de su pasión por el modelaje, su experiencia, y su enfoque profesional. La idea es que sea personal pero conciso.</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4 pt-4 text-sm">
+                        <div><strong class="font-medium text-black">Altura:</strong> 1.78m</div>
+                        <div><strong class="font-medium text-black">Busto:</strong> 85cm</div>
+                        <div><strong class="font-medium text-black">Cintura:</strong> 60cm</div>
+                        <div><strong class="font-medium text-black">Cadera:</strong> 90cm</div>
+                        <div><strong class="font-medium text-black">Ojos:</strong> Verdes</div>
+                        <div><strong class="font-medium text-black">Pelo:</strong> Castaño</div>
+                    </div>
                 </div>
             </div>
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer sm:col-span-1 lg:col-span-1">
-                 <img src="https://placehold.co/800x600/e2e8f0/334155?text=EDITORIAL" alt="Foto de una editorial de moda" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-white font-playfair text-2xl">Editorial Vogue</h3>
-                </div>
-            </div>
-             <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                <img src="https://placehold.co/600x800/e2e8f0/334155?text=RETRATO" alt="Retrato de la modelo" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-white font-playfair text-2xl">Retratos Beauty</h3>
-                </div>
-            </div>
-             <div class="group relative overflow-hidden rounded-lg cursor-pointer sm:col-span-2 lg:col-span-2">
-                 <img src="https://placehold.co/1200x600/e2e8f0/334155?text=CAMPAÑA+2" alt="Foto de una campaña de moda en exteriores" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-white font-playfair text-2xl">Lookbook Invierno</h3>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                 <img src="https://placehold.co/600x600/e2e8f0/334155?text=DETALLE" alt="Foto detalle de un accesorio" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-white font-playfair text-2xl">Accesorios</h3>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                 <img src="https://placehold.co/600x800/e2e8f0/334155?text=CAMPAÑA+3" alt="Foto de una campaña de moda urbana" class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105">
-                <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 class="text-white font-playfair text-2xl">Moda Urbana</h3>
-                </div>
-            </div>
-        </div>
+        </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-white py-12">
-        <div class="container mx-auto text-center text-gray-500">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="hover:text-gray-900 transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c-4.42 0-7.8 3.38-7.8 7.8s3.38 7.8 7.8 7.8 7.8-3.38 7.8-7.8S16.735 2 12.315 2zM8.71 11.054a3.315 3.315 0 115.225-2.265 3.315 3.315 0 01-5.225 2.265zM16.947 8.71a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" clip-rule="evenodd" /></svg></a>
-                <a href="#" class="hover:text-gray-900 transition-colors duration-300"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.984 2.003c5.514 0 9.98 4.466 9.98 9.98 0 5.513-4.466 9.98-9.98 9.98-5.513 0-9.98-4.467-9.98-9.98 0-5.514 4.467-9.98 9.98-9.98zm0 1.532a8.448 8.448 0 100 16.896 8.448 8.448 0 000-16.896zm4.8 7.992v1.533h-3.267v4.22h-1.833v-4.22H8.417V9.995c.594-.23 1.1-.563 1.516-1.002.417-.438.73-1.015.94-1.73h2.276v2.735h1.633z"/></svg></a>
+    <!-- 
+        FOOTER MEJORADO
+        - Ahora funciona también como la sección de CONTACTO.
+        - Fondo de color oscuro para un contraste elegante.
+        - Información de contacto más prominente.
+    -->
+    <footer id="contacto" class="bg-[#1a1a1a] text-white/80">
+        <div class="container mx-auto py-20 md:py-24 text-center">
+             <h2 class="font-cormorant text-4xl md:text-5xl font-semibold mb-6">Contacto</h2>
+             <p class="mb-8 text-lg font-light">Disponible para campañas, editoriales y colaboraciones.</p>
+             <a href="mailto:email@ejemplo.com" class="text-2xl md:text-3xl font-light text-white hover:text-gray-300 transition-colors duration-300 tracking-wider">email.de.camila@ejemplo.com</a>
+            
+            <div class="flex justify-center space-x-6 mt-12 mb-12">
+                <a href="#" class="hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c-4.42 0-7.8 3.38-7.8 7.8s3.38 7.8 7.8 7.8 7.8-3.38 7.8-7.8S16.735 2 12.315 2zM8.71 11.054a3.315 3.315 0 115.225-2.265 3.315 3.315 0 01-5.225 2.265zM16.947 8.71a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.984 2.003c5.514 0 9.98 4.466 9.98 9.98 0 5.513-4.466 9.98-9.98 9.98-5.513 0-9.98-4.467-9.98-9.98 0-5.514 4.467-9.98 9.98-9.98zm0 1.532a8.448 8.448 0 100 16.896 8.448 8.448 0 000-16.896zm4.8 7.992v1.533h-3.267v4.22h-1.833v-4.22H8.417V9.995c.594-.23 1.1-.563 1.516-1.002.417-.438.73-1.015.94-1.73h2.276v2.735h1.633z"/></svg>
+                </a>
             </div>
-            <p class="text-xs tracking-wider uppercase">&copy; 2025 CAMILA TESSIO. TODOS LOS DERECHOS RESERVADOS.</p>
+            <p class="text-xs tracking-wider uppercase text-white/50">&copy; 2025 CAMILA TESSIO</p>
         </div>
     </footer>
 
